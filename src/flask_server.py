@@ -91,7 +91,7 @@ def upload_file():
 #     pass
 
 def predict():
-    if request.meathod == 'POST':
+    if request.method == 'POST':
         try:
             data = 
 
