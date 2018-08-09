@@ -12,3 +12,12 @@ Then your inputted image gets compared to a dataset consisting of over 200k labe
 
 
 ### Running on your own computer
+
+
+#### test table
+
+|name   | header 1    |  header 2  |
+|-------|-------------|------------|
+|Bob    |test info    |            |
+|Sally  |     testing | fjkdlsajfkl|
+
