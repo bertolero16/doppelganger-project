@@ -91,7 +91,7 @@ for idx in labels_df.index:
     celeb_name = os.path.basename(dirname)
     label_dict[label_num] = celeb_name
 
-def output_name(prediction_num)
+def output_name(pred_num)
 
     return label_dict(pred_num).title() # the .title() is to capitalize name
 
