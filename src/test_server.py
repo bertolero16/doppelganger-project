@@ -18,10 +18,11 @@ def background_process_test():
 
 @app.route('/background_predict')
 def predict():
-    # predict_command = '../openface/demos/classifier.py infer ../openface/generated-embeddings/classifier.pkl {}'.format(uploaded_image)
-    predict_command = 'cat classifier.py'
-    os.system(predict_command)
-    return 'nothing'
+    predict_command = '../openface/demos/classifier.py infer ../openface/generated-embeddings/classifier.pkl {}'.format(uploaded_image)
+
+    celeb = os.system(predict_command) # once changing classifier.py to output person.decode
+    
+    return jsonify
 
 if __name__ == '__main__':
     app.run(host ='0.0.0.0', port = 3335, debug = True)

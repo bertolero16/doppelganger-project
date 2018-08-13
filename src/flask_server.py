@@ -62,10 +62,12 @@ def upload_file():
 
 @app.route('/background_predict')
 def predict():
-    # predict_command = '../openface/demos/classifier.py infer ../openface/generated-embeddings/classifier.pkl {}'.format(uploaded_image)
-    predict_command = 'cat predict.py'
-    os.system(predict_command)
-    return 'nothing'
+    predict_command = '../openface/demos/classifier.py infer ../openface/generated-embeddings/classifier.pkl {}'.format(uploaded_image_path) # must get most recent image path from uploads folder
+
+    celeb = os.system(predict_command)
+    mydict = {}
+    mydict[user_name] = celeb
+    return jsonify(mydict) # eventually must grab user name from upload.html input in step 2 
 
 
 
