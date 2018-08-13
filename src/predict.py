@@ -35,13 +35,14 @@ and labels.csv).  Tested out code in
 
 label_csv_path = ''
 reps_csv_path = ''
-
+UPLOAD_FOLDER = '../data/flask_uploads'
+most_recent_image = files = [os.path.join('E:\\Downloads', x) for x in os.listdir('E:\\Downloads') if x.endswith(".xls")]
 
 ##################################
 
 # I. FEATURIZE INPUT IMAGE
 
-
+def get_image(input_image_path):
 
 
 
@@ -91,9 +92,15 @@ for idx in labels_df.index:
     celeb_name = os.path.basename(dirname)
     label_dict[label_num] = celeb_name
 
-def output_name(pred_num)
+# def output_name(pred_num)
 
-    return label_dict(pred_num).title() # the .title() is to capitalize name
+#     return label_dict(pred_num).title() # the .title() is to capitalize name
+
+
 
 ################################
+
+
+
+
 

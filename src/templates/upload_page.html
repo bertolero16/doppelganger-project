@@ -1,7 +1,55 @@
 <!doctype html>
     <title>Upload new File</title>
     <h1>Upload new File</h1>
+    
+    <body>Step 1:</body>
+
+
     <form method=post enctype=multipart/form-data>
       <input type=file name=file>
       <input type=submit value=Upload>
     </form>
+
+    <div>Step 2:
+
+    </div>
+
+    <div id="name">
+      <div>
+        <label>Enter your name:</label>
+        <input id="user_name" type="string"/>
+      </div>
+    </div>
+
+    <div>
+      Step 3:
+    </div>
+
+    
+
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+            $(function() {
+              $('a#test').bind('click', function() {
+                $.getJSON('/background_predict',
+                function(data) {
+              //do nothing
+                });
+                return false;
+              });
+            });
+    </script>
+
+
+
+    <div class='container'>
+    <h3>Click here to predict:</h3>
+        <form>
+            <a href=# id=test><button class='btn btn-default'>Predict</button></a>
+        </form>
+
+    </div>
+  

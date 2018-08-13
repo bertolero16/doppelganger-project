@@ -20,7 +20,7 @@ app = Flask(__name__)
 
 # UPLOADING FILES
 
-UPLOAD_FOLDER = './uploads' # <---- set path to local uploads folder
+UPLOAD_FOLDER = '../data/flask_uploads' # <---- set path to local uploads folder
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
 app = Flask(__name__)
@@ -49,7 +49,25 @@ def upload_file():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('upload_file',
                                     filename=filename))
+    
+
+
     return render_template('upload_page.html')
+
+
+#######
+
+#predict
+# ./demos/classifier.py infer ./generated-embeddings/classifier.pkl your_test_image.jpg
+
+@app.route('/background_predict')
+def predict():
+    # predict_command = '../openface/demos/classifier.py infer ../openface/generated-embeddings/classifier.pkl {}'.format(uploaded_image)
+    predict_command = 'cat predict.py'
+    os.system(predict_command)
+    return 'nothing'
+
+
 
 
 #################################
@@ -90,10 +108,11 @@ def upload_file():
 #     """
 #     pass
 
-def predict():
-    if request.method == 'POST':
-        try:
-            data = 
+# def predict():
+#     if request.method == 'POST':
+#         try:
+#             data = 
+
 
 
 
@@ -103,7 +122,7 @@ def predict():
 
 @app.route('/homepage')
 def homepage():
-    # return 'hey buddddy'
+    
     return render_template('homepage.html')
 
 
@@ -120,7 +139,7 @@ if __name__ == '__main__':
     # model = pickle.load(open(pkl_file, 'rb'))
     # print("loaded OK")
 
-    app.run(host ='0.0.0.0', port = 3333, debug = True)
+    app.run(host ='0.0.0.0', port = 3334, debug = True)
 
 
 
